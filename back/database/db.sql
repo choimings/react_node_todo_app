@@ -1,4 +1,4 @@
--- Table 생성
+-- 테이블 생성
 CREATE TABLE task (
     _id TEXT PRIMARY KEY,
     title TEXT NOT NULL,
@@ -12,11 +12,17 @@ CREATE TABLE task (
 );
 
 -- 데이터 추가
-INSERT INTO task (_id, title, description, date, isCompleted, isImportant, userId)
-VALUES ('1234', '할 일1', '할 일1 설명', '2021-08-01', false, false, 'mingyeong');
+INSERT INTO task (_id, title, description, date, isCompleted, isImportant, userId) VALUES ('1234', '할일1', '할일1 설명', '2021-08-01', false, false, 'marshall');
 
 -- 데이터 조회
 SELECT * FROM task
 
--- 특정 사용자 데이터 조회
-SELECT * FROM task WHERE userId = 'mings'
+-- 특정 사용자 데이터 필터 조회
+SELECT * FROM task WHERE userId = 'mingyeong'
+
+-- 데이터 삭제
+DELETE FROM task WHERE _id='1234'
+
+-- 데이터 업데이트(수정)
+UPDATE task SET	iscompleted = true
+WHERE _id = '1236'
